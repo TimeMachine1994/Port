@@ -67,3 +67,7 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# App Hosting configuration (contains secrets)
+apphosting.yaml
+myPortfolio/apphosting.yaml
