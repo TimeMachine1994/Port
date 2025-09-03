@@ -31,6 +31,30 @@
 			loading = false;
 		}
 	}
+
+	function handleImageLoad(event, photo) {
+		const img = event.target;
+		console.log(`Thumbnail loaded: ${photo.name}`);
+		
+		// Start loading the full resolution image after thumbnail loads
+		setTimeout(() => {
+			const fullImg = new Image();
+			fullImg.onload = () => {
+				// Smoothly transition to full resolution
+				img.style.transition = 'opacity 0.3s ease';
+				img.style.opacity = '0.7';
+				setTimeout(() => {
+					img.src = photo.url;
+					img.style.opacity = '1';
+					console.log(`Full image loaded: ${photo.name}`);
+				}, 150);
+			};
+			fullImg.onerror = () => {
+				console.warn(`Failed to load full image for ${photo.name}, keeping thumbnail`);
+			};
+			fullImg.src = photo.url;
+		}, 500); // Wait 500ms before starting full image load
+	}
 </script>
 
 
@@ -77,11 +101,12 @@
 			{#each photos as photo}
 				<div class="masonry-item group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
 					<img 
-						src={photo.url} 
+						src={photo.thumbnailUrl} 
 						alt={photo.name}
-						class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+						class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 progressive-image"
 						loading="lazy"
-						on:load={() => console.log(`Image loaded: ${photo.name}`)}
+						data-full-src={photo.url}
+						on:load={(e) => handleImageLoad(e, photo)}
 						on:error={() => console.error(`Failed to load image: ${photo.name}`)}
 					/>
 				</div>
@@ -118,5 +143,14 @@
 		width: 100%;
 		margin-bottom: 1rem;
 		break-inside: avoid;
+	}
+
+	.progressive-image {
+		filter: blur(0px);
+		transition: filter 0.3s ease, opacity 0.3s ease;
+	}
+
+	.progressive-image[src*="thumb"] {
+		filter: blur(1px);
 	}
 </style>

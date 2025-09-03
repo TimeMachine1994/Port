@@ -1,10 +1,14 @@
 import { json } from '@sveltejs/kit';
 import sgMail from '@sendgrid/mail';
-import { SENDGRID_API_KEY } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 import type { RequestHandler } from './$types';
 
 // Initialize SendGrid
-sgMail.setApiKey(SENDGRID_API_KEY);
+const sendgridApiKey = env.SENDGRID_API_KEY;
+if (!sendgridApiKey) {
+	throw new Error('SENDGRID_API_KEY environment variable is required');
+}
+sgMail.setApiKey(sendgridApiKey);
 
 export const POST: RequestHandler = async ({ request }) => {
 	try {
