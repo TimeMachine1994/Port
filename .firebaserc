@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "artfolio-b47a4"
-  }
+    "default": "artfolio-b47a4",
+    "prod": "artfolio-b47a4"
+  },
+  "targets": {},
+  "etags": {}
 }
