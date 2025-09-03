@@ -3,15 +3,17 @@ import sgMail from '@sendgrid/mail';
 import { env } from '$env/dynamic/private';
 import type { RequestHandler } from './$types';
 
-// Initialize SendGrid
-const sendgridApiKey = env.SENDGRID_API_KEY;
-if (!sendgridApiKey) {
-	throw new Error('SENDGRID_API_KEY environment variable is required');
-}
-sgMail.setApiKey(sendgridApiKey);
-
 export const POST: RequestHandler = async ({ request }) => {
 	try {
+		// Initialize SendGrid with runtime check
+		const sendgridApiKey = env.SENDGRID_API_KEY;
+		if (!sendgridApiKey) {
+			return json(
+				{ error: 'Email service is not configured' },
+				{ status: 500 }
+			);
+		}
+		sgMail.setApiKey(sendgridApiKey);
 		const { email } = await request.json();
 
 		// Validate email
