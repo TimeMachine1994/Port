@@ -1,0 +1,8 @@
+Add your photos here!
+
+Instructions:
+1. Copy your photos to this /static/gallery/ folder
+2. Name them: photo1.jpg, photo2.jpg, photo3.jpg, etc.
+3. Update the photos array in PhotoGallery.svelte with your actual photo names and titles
+
+Supported formats: .jpg, .jpeg, .png, .webp, .gif

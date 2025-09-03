@@ -79,13 +79,13 @@
 			<p class="text-xl md:text-2xl font-light mb-6">Entrepreneur | Filmmaker | Technical Professional</p>
 			<div class="flex flex-wrap justify-center gap-6 text-lg">
 				<a href="mailto:AustinBryanFilm@gmail.com" class="text-blue-300 hover:text-blue-100 hover:underline transition-colors">
-					Email
+					AustinBryanFilm@gmail.com
 				</a>
 				<a href="tel:+14072215922" class="text-blue-300 hover:text-blue-100 hover:underline transition-colors">
-					Phone
+					407-221-5922
 				</a>
-				<a href="http://phoenixvideocreations.com" target="_blank" class="text-blue-300 hover:text-blue-100 hover:underline transition-colors">
-					Website
+				<a href="https://tributestream.com" target="_blank" class="text-blue-300 hover:text-blue-100 hover:underline transition-colors">
+					Tributestream.com
 				</a>
 			</div>
 		</div>
@@ -306,3 +306,21 @@
 		animation: fadeIn 1.5s ease-in-out;
 	}
 </style>
+
+<!-- Rate Sheet CTA -->
+<div class="text-center mt-16 mb-12">
+	<div class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-xl p-8">
+		<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+			Need Professional Services?
+		</h3>
+		<p class="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
+			View detailed pricing for videography, photography, and production services.
+		</p>
+		<a href="/rate-sheet" class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors">
+			<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+			</svg>
+			View Rate Sheet
+		</a>
+	</div>
+</div>
