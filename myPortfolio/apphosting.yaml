@@ -1,0 +1,32 @@
+# App Hosting configuration for Austin's Art Portfolio
+# This file configures environment variables and runtime settings for Firebase App Hosting
+
+# Settings for Cloud Run
+runConfig:
+  minInstances: 0
+  maxInstances: 10
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+# Environment variables and secrets
+env:
+  # SendGrid API Key for contact form and newsletter
+  - variable: SENDGRID_API_KEY
+    secret: sendgrid-api-key
+    availability:
+      - RUNTIME
+
+  # Firebase configuration (if needed for server-side operations)
+  - variable: FIREBASE_PROJECT_ID
+    value: artfolio-b47a4
+    availability:
+      - BUILD
+      - RUNTIME
+
+  # Node environment
+  - variable: NODE_ENV
+    value: production
+    availability:
+      - BUILD
+      - RUNTIME
