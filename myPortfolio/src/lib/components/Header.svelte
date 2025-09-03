@@ -8,7 +8,7 @@
 			<div class="flex items-center">
 				<div class="flex-shrink-0 mr-3">
 					<img 
-						src="https://firebasestorage.googleapis.com/v0/b/artfolio-b47a4.firebasestorage.app/o/Collections%2FPhotos%2Faustins%20logo.svg?alt=media&token=1bb9687f-1ea0-488f-a062-08d98ec44834" 
+						src="/favicon.svg" 
 						alt="Austin's Art Logo" 
 						class="h-8 w-8"
 					/>
