@@ -12,8 +12,9 @@ runConfig:
 # Environment variables and secrets
 env:
   # SendGrid API Key for contact form and newsletter
+  # Note: Set this as a regular environment variable in Firebase console instead of secret
   - variable: SENDGRID_API_KEY
-    secret: sendgrid-api-key
+    value: "your-sendgrid-api-key-here"
     availability:
       - RUNTIME
 
