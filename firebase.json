@@ -8,15 +8,28 @@
   "storage": {
     "rules": "storage.rules"
   },
-  "apphosting": {
-    "backendId": "artfolio",
-    "rootDir": "/",
-    "ignore": [
-      "node_modules",
-      ".git",
-      "firebase-debug.log",
-      "firebase-debug.*.log",
-      "functions"
-    ]
-  }
+  "apphosting": [
+    {
+      "backendId": "artfolio",
+      "rootDir": "/",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "functions"
+      ]
+    },
+    {
+      "backendId": "myportfolio",
+      "rootDir": "myPortfolio",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "functions"
+      ]
+    }
+  ]
 }
